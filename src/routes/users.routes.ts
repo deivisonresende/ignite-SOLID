@@ -7,19 +7,19 @@ import { turnUserAdminController } from "../modules/users/useCases/turnUserAdmin
 
 const usersRoutes = Router();
 
-usersRoutes.post("/", (request, response) =>
+usersRoutes.post("/users/", (request, response) =>
   createUserController.handle(request, response)
 );
 
-usersRoutes.patch("/:user_id/admin", (request, response) =>
+usersRoutes.patch("/users/:user_id/admin", (request, response) =>
   turnUserAdminController.handle(request, response)
 );
 
-usersRoutes.get("/:user_id", (request, response) =>
+usersRoutes.get("/users/:user_id", (request, response) =>
   showUserProfileController.handle(request, response)
 );
 
-usersRoutes.get("/", (request, response) =>
+usersRoutes.get("/users", (request, response) =>
   listAllUsersController.handle(request, response)
 );
 
